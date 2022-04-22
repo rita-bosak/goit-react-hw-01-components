@@ -1,4 +1,16 @@
 import PropTypes from 'prop-types';
+import {
+  ProfileContainer,
+  ProfileDescription,
+  Avatar,
+  ProfileName,
+  ProfileTag,
+  ProfileLocation,
+  ProfileStatsList,
+  ProfileStatsItem,
+  ProfileStatsLabel,
+  ProfileStatsQuantity,
+} from './Profile.styled';
 
 export default function Profile({
   username,
@@ -10,29 +22,29 @@ export default function Profile({
   likes,
 }) {
   return (
-    <div className="profile" key={tag}>
-      <div className="description">
-        <img src={avatar} alt="User avatar" className="avatar" />
-        <p className="name">{username}</p>
-        <p className="tag">@{tag}</p>
-        <p className="location">{location}</p>
-      </div>
+    <ProfileContainer key={tag}>
+      <ProfileDescription>
+        <Avatar src={avatar} alt="User avatar" />
+        <ProfileName>{username}</ProfileName>
+        <ProfileTag>@{tag}</ProfileTag>
+        <ProfileLocation>{location}</ProfileLocation>
+      </ProfileDescription>
 
-      <ul className="stats">
-        <li>
-          <span className="label">Followers</span>
-          <span className="quantity">{followers}</span>
-        </li>
-        <li>
-          <span className="label">Views</span>
-          <span className="quantity">{views}</span>
-        </li>
-        <li>
-          <span className="label">Likes</span>
-          <span className="quantity">{likes}</span>
-        </li>
-      </ul>
-    </div>
+      <ProfileStatsList>
+        <ProfileStatsItem>
+          <ProfileStatsLabel>Followers</ProfileStatsLabel>
+          <ProfileStatsQuantity>{followers}</ProfileStatsQuantity>
+        </ProfileStatsItem>
+        <ProfileStatsItem>
+          <ProfileStatsLabel>Views</ProfileStatsLabel>
+          <ProfileStatsQuantity>{views}</ProfileStatsQuantity>
+        </ProfileStatsItem>
+        <ProfileStatsItem>
+          <ProfileStatsLabel>Likes</ProfileStatsLabel>
+          <ProfileStatsQuantity>{likes}</ProfileStatsQuantity>
+        </ProfileStatsItem>
+      </ProfileStatsList>
+    </ProfileContainer>
   );
 }
 
