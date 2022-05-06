@@ -20,14 +20,13 @@ export const StatList = styled.ul`
 export const StatItem = styled.li`
   min-width: 120px;
   border: 1px solid black;
+
+  span {
+    display: block;
+    padding: 5px;
+  }
 `;
 
-export const StatLabel = styled.span`
-  display: block;
-  padding: 5px;
-`;
+export const StatLabel = styled.span``;
 
-export const StatPercentage = styled.span`
-  display: block;
-  padding: 5px;
-`;
+export const StatPercentage = styled.span``;
