@@ -12,15 +12,7 @@ import {
   ProfileStatsQuantity,
 } from './Profile.styled';
 
-export default function Profile({
-  username,
-  tag,
-  location,
-  avatar,
-  followers,
-  views,
-  likes,
-}) {
+export default function Profile({ username, tag, location, avatar, stats }) {
   return (
     <ProfileContainer key={tag}>
       <ProfileDescription>
@@ -33,15 +25,15 @@ export default function Profile({
       <ProfileStatsList>
         <ProfileStatsItem>
           <ProfileStatsLabel>Followers</ProfileStatsLabel>
-          <ProfileStatsQuantity>{followers}</ProfileStatsQuantity>
+          <ProfileStatsQuantity>{stats.followers}</ProfileStatsQuantity>
         </ProfileStatsItem>
         <ProfileStatsItem>
           <ProfileStatsLabel>Views</ProfileStatsLabel>
-          <ProfileStatsQuantity>{views}</ProfileStatsQuantity>
+          <ProfileStatsQuantity>{stats.views}</ProfileStatsQuantity>
         </ProfileStatsItem>
         <ProfileStatsItem>
           <ProfileStatsLabel>Likes</ProfileStatsLabel>
-          <ProfileStatsQuantity>{likes}</ProfileStatsQuantity>
+          <ProfileStatsQuantity>{stats.likes}</ProfileStatsQuantity>
         </ProfileStatsItem>
       </ProfileStatsList>
     </ProfileContainer>
@@ -53,7 +45,9 @@ Profile.propTypes = {
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
-  followers: PropTypes.number.isRequired,
-  views: PropTypes.number.isRequired,
-  likes: PropTypes.number.isRequired,
+  stats: PropTypes.shape({
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
+  }),
 };
