@@ -15,7 +15,7 @@ export const FriendListItemStyle = styled.li`
   }
 `;
 
-export const FriendItemSpan = styled.span`
+export const FriendItemStatus = styled.span`
   position: absolute;
   top: 1px;
   right: 1px;
@@ -24,9 +24,11 @@ export const FriendItemSpan = styled.span`
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  box-shadow: 1px 2px 3px 0px rgb(3, 138, 3);
+  box-shadow: 1px 2px 3px 0px
+    ${props => (props.isOnline ? 'rgb(0, 80, 0)' : 'rgb(109, 2, 2)')};
 
-  background-color: rgb(7, 211, 7);
+  background-color: ${props =>
+    props.isOnline ? 'rgb(3, 138, 3)' : 'rgb(221, 2, 2)'};
 `;
 
 export const Avatar = styled.img`

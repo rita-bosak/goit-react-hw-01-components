@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import {
   FriendListItemStyle,
-  FriendItemSpan,
+  FriendItemStatus,
   Avatar,
   FriendName,
 } from './FriendListItem.styled';
@@ -9,7 +9,7 @@ import {
 export default function FriendListItem({ avatar, name, isOnline }) {
   return (
     <FriendListItemStyle>
-      {isOnline && <FriendItemSpan>{isOnline}</FriendItemSpan>}
+      <FriendItemStatus isOnline={isOnline}></FriendItemStatus>
       <Avatar src={avatar} alt="User avatar" width="48" />
       <FriendName>{name}</FriendName>
     </FriendListItemStyle>
